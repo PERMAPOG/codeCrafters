@@ -1,7 +1,11 @@
+
+/* Set the font family and background styling for the body
+ */
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(16, 15, 15, 0.75)),
       url(/Users/negro/Desktop/codeCrafters/codeCrafters/static/images/ai.jpg) center/cover no-repeat;
+    /* ^^ Apply a linear gradient overlay and a background image to the body */
     margin: 0;
     padding: 20px;
   }
@@ -10,20 +14,22 @@ body {
     text-align: left;
     margin-top: 0;
     margin-bottom: 20px;
-    color: white !important;
+    color: white;
   }
   
   h1.centered {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    color: white !important;
+    color: white;
   }
   
   div {
     text-align: center;
   }
   
+/* Styling for the unordered list.
+    removes the bullet points */
   ul {
     list-style: none;
     padding: 0;
@@ -36,6 +42,8 @@ body {
     margin: 10px;
   }
   
+/* Styling for the filter images.
+Sets the width and height of the images, adjusts the object-fit, and add a border radius */
   img {
     width: 200px;
     height: 200px;
