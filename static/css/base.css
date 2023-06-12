@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(16, 15, 15, 0.75)),
+      url(/Users/negro/Desktop/codeCrafters/codeCrafters/static/images/ai.jpg) center/cover no-repeat;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  h1.top-left {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white !important;
+  }
+  
+  h1.centered {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white !important;
+  }
+  
+  div {
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  p {
+    margin-top: 5px;
+    color: white;
+    font-weight: bold;
+  }
+  
