@@ -10,32 +10,41 @@ drawing_tools = mp.solutions.drawing_utils
 # mediapipe face mesh 
 face_mesh = mp.solutions.face_mesh
 
+# mediapipe drawing styles
 drawing_styles = mp.solutions.drawing_styles
 
-img = cv2.imread('static/images/sample.jpg')
+# read in image 
+img = cv2.imread('static/images/sample6.jpg')
+
+# read in sunglasses
 sunglasses = cv2.imread('static/images/sunglasses.jpg')
 
+# parameters for face mesher
 face_mesh_images = face_mesh.FaceMesh(static_image_mode=True, max_num_faces=2, min_detection_confidence=0.5)
 
-# formatt to RGB
+# face mesh desired image and formatt to RGB
 face_mesh_results = face_mesh_images.process(img[:,:,::-1])
 
+#returns a list all the elements relating to face area
 LEFT_EYE_INDEXES = list(set(itertools.chain(*face_mesh.FACEMESH_LEFT_EYE)))
 RIGHT_EYE_INDEXES = list(set(itertools.chain(*face_mesh.FACEMESH_RIGHT_EYE)))
 
+
+# formatt to RGB
 img_copy = img[:,:,::-1].copy()
 
+# if face mesh found in image
 if face_mesh_results.multi_face_landmarks:
     for face_landmarks in face_mesh_results.multi_face_landmarks:
-        # Get the coordinates of the corners of the sunglasses
-        left_eye_corner = (int(face_landmarks.landmark[2].x * img.shape[1]), int(face_landmarks.landmark[2].y * img.shape[0]))
-        right_eye_corner = (int(face_landmarks.landmark[338].x * img.shape[1]), int(face_landmarks.landmark[338].y * img.shape[0]))
+        
+        left_eye_corner = (int(face_landmarks.landmark[446].x * img.shape[1]), int(face_landmarks.landmark[446].y * img.shape[0]))
+        right_eye_corner = (int(face_landmarks.landmark[113].x * img.shape[1]), int(face_landmarks.landmark[113].y * img.shape[0]))
 
-        # Calculate sunglasses width and the ratio
-        sunglasses_width = left_eye_corner[0]
-          # Increase the width by 20%
-        sunglasses_width = int(1.2 * sunglasses_width)
+        # calculate sunglasses width and the ratio
+        sunglasses_width = abs(right_eye_corner[0] - left_eye_corner[0]) # Calculate width by difference in X-coordinates
+        sunglasses_width = int(2 * sunglasses_width)
         ratio = sunglasses_width / sunglasses.shape[1] if sunglasses.shape[1] != 0 else 0
+
 
         # Resize the sunglasses to fit the face width
         if ratio > 0:
