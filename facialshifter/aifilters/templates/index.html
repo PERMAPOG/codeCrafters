@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +8,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="/Users/negro/Desktop/codeCrafters/codeCrafters/static/css/base.css"
+      href="{% static 'css/base.css' %}"
     />
   </head>
 
@@ -19,28 +20,28 @@
       <ul>
         <li>
           <img
-            src="/Users/negro/Desktop/codeCrafters/codeCrafters/static/images/beard.jpg"
+            src="{% static 'images/beard.jpg' %}"
             alt="beard"
           />
           <p>Beard</p>
         </li>
         <li>
           <img
-            src="/Users/negro/Desktop/codeCrafters/codeCrafters/static/images/sunglasses.jpg"
+            src="{% static 'images/sunglasses.jpg' %}"
             alt="sunglasses"
           />
           <p>SunGlasses</p>
         </li>
         <li>
           <img
-            src="/Users/negro/Desktop/codeCrafters/codeCrafters/static/images/dog.jpg"
+            src="{% static 'images/dog.jpg' %}"
             alt="dog"
           />
           <p>Dog</p>
         </li>
         <li>
           <img
-            src="/Users/negro/Desktop/codeCrafters/codeCrafters/static/images/Ben.jpg"
+            src="{% static 'images/Ben.jpg' %}"
             alt="3D Image"
           />
           <p>3D Ben</p>
