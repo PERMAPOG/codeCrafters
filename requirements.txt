@@ -1,1 +1,5 @@
 django==4.2.2
+
+opencv-contrib-python==4.7.0.72
+
+mediapipe==0.10.1
