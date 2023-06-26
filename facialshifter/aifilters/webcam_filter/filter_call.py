@@ -7,10 +7,10 @@ def load_overlay_images(filter):
         mustache_image = cv2.imread('static/filters/cowboy/mustache.png', -1)
         return hat_image, mustache_image
     elif filter == '1':
-        # function call here
+        # Load overlay
         pass
     elif filter == '2':
-        # function call here
+        # load overlay
         pass
     else:
         # else
