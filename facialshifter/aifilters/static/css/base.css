@@ -1,10 +1,10 @@
 
 /* Set the font family and background styling for the body
- */
+ */ 
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(rgba(18, 18, 18, 0.75), rgba(16, 15, 15, 0.75)),
-      url(/Users/negro/Desktop/codeCrafters/codeCrafters/static/images/ai.jpg) center/cover no-repeat;
+      url(/static/images/ai.jpg) center/cover no-repeat;
     /* ^^ Apply a linear gradient overlay and a background image to the body */
     margin: 0;
     padding: 20px;
