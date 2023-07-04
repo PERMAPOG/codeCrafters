@@ -124,3 +124,69 @@ def facemeshapp():
 
     webcam.release()
     cv2.destroyAllWindows()
+
+
+
+
+#------------------------------------
+#Here is the way I have my webcam loop. I modified it to be able to call the functions. I also turned the facemesh into a function:
+# This function applies the facemesh on the video
+
+#def apply_face_mesh_filter(image):
+    # Apply face mesh using MediaPipe
+   # img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+   # result = face_mesh.FaceMesh(refine_landmarks=True).process(img_rgb)
+
+    ## Draw annotations on the image
+    #if result.multi_face_landmarks:
+       # for face_landmarks in result.multi_face_landmarks:
+            # Drawing the tesselation on image
+        #    mp_drawing.draw_landmarks(
+         #       image=image,
+          #      landmark_list=face_landmarks,
+           #     connections=face_mesh.FACEMESH_TESSELATION,
+            #    landmark_drawing_spec=None,
+             #   connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_tesselation_style(),
+            #)
+
+            # Drawing the contours on image
+            #mp_drawing.draw_landmarks(
+             #   image=image,
+              #  landmark_list=face_landmarks,
+               # connections=face_mesh.FACEMESH_CONTOURS,
+                #landmark_drawing_spec=None,
+                #connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_contours_style(),
+            #)
+
+            # Drawing the Irises on image
+            #mp_drawing.draw_landmarks(
+             #   image=image,
+              #  landmark_list=face_landmarks,
+               # connections=face_mesh.FACEMESH_IRISES,
+                #landmark_drawing_spec=None,
+                #connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_iris_connections_style(),
+            #)
+
+    #return image
+
+
+
+
+# Start webcam
+#webcam = cv2.VideoCapture(0)
+
+#while webcam.isOpened():
+    # reads frame by frame, if frame is successfuly read, the returns true
+ #   success, img = webcam.read()
+  #  if success:
+   #     img = face_swap(img)
+        #img = apply_face_mesh_filter(img)
+        
+    #    cv2.imshow("Webcam Face Mesh", img)
+     #   key = cv2.waitKey(20) & 0xFF
+      #  if key == ord("q"):  # Press 'q' to exit
+       #     break
+        #elif key == ord("p"):  # Press 'p' to pause frame
+         #   while cv2.waitKey(1) & 0xFF != ord("c"):  # Press 'c' to continue
+          #      pass
+
