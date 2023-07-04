@@ -29,31 +29,30 @@ body {
   }
   
 /* Styling for the unordered list.
-    removes the bullet points */
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li {
-    display: inline-block;
-    text-align: center;
-    margin: 10px;
-  }
-  
+  removes the bullet points */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
 /* Styling for the filter images.
 Sets the width and height of the images, adjusts the object-fit, and add a border radius */
-  img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  p {
-    margin-top: 5px;
-    color: white;
-    font-weight: bold;
-  }
-  
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+p {
+  margin-top: 5px;
+  color: white;
+  font-weight: bold;
+}
