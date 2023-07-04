@@ -3,6 +3,71 @@ import itertools
 import numpy as np
 import mediapipe as mp
 import matplotlib.pyplot as plt
+import insightface
+from insightface.app import FaceAnalysis
+
+#Face Swap Function for Live video
+def face_swap_vid(image):
+    app = FaceAnalysis(name="buffalo_l") #face detection model provided by insigthface
+    app.prepare(ctx_id=0, det_size=(640,640))
+
+    #pass in an image
+    img = cv2.imread('will.png')
+    will_faces = app.get(img) #detect face in image
+    will_face = will_faces[0]
+
+    # Converts the color of the image from BGR to RGB format.
+    #OpenCV wont be able to work with it otherwise
+    img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    target = img_rgb
+    target_faces = app.get(target)
+    target_face = target_faces[0]
+    
+    #Face swapping
+    #inswapper_128.onnx trained model downloaded from Insightface github tutorial
+    #here is the url: https://github.com/deepinsight/insightface/tree/master/examples/in_swapper
+    swapper = insightface.model_zoo.get_model("inswapper_128.onnx", download=False,download_zip=False)
+
+    target = swapper.get(target, target_face, will_face, paste_back=True)
+
+    return target
+
+#Void function, call it and it will swap Will Smiths face on a picture of mine 
+def face_swap_pic():
+    app = FaceAnalysis(name="buffalo_l") #face detection model
+    app.prepare(ctx_id=0, det_size=(640,640))
+
+    #pass in an image
+    img = cv2.imread('will.png')
+    will_faces = app.get(img) #detect face in image
+    will_face = will_faces[0]
+
+    #Target image that wants to be altered
+    target = cv2.imread('byron.jpg')
+    target_faces = app.get(target)
+    target_face = target_faces[0]
+
+    #The code below is to test if it is detected the face
+    #uncomment to test:
+    #bbox = target_face['bbox']
+    #bbox = [int(b) for b in bbox]
+    #plt.imshow(target[bbox[1]:bbox[3],bbox[0]:bbox[2],::-1])
+    #plt.show()
+
+    res = target.copy() #make a copy of target photo to not alter original
+
+    #Face swapping
+    swapper = insightface.model_zoo.get_model("inswapper_128.onnx", download=False,download_zip=False)
+
+    res = swapper.get(res, target_face, will_face, paste_back=True)
+
+    #Used to display the image
+    fig, ax = plt.subplots()
+    ax.imshow(res[:,:,::-1])
+    ax.axis('off')
+    plt.show()
+    
+
 
 def facemeshapp():
     # mediapipe face mesh
