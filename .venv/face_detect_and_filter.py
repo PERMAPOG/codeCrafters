@@ -1,6 +1,6 @@
 import cv2
 import mediapipe as mp
-from filter_call import cowboy_filter, load_overlay_images, bossModeFilter
+from filter_call import cowboy_filter, load_overlay_images, bossModeFilter, police_filter, pirate_filter
 
 def face_detect_and_filter(filter):
     # load filter overlay images
@@ -64,17 +64,17 @@ def face_detect_and_filter(filter):
                         elif filter == 'SUNGLASSES_FILTER':
                             # function call here
                             frame = bossModeFilter(frame, overlay, face_features, frame_shape)
-                        elif filter == '2':
+                        elif filter == 'POLICE_FILTER':
                             # function call here
-                            pass
+                            frame = police_filter(frame, overlay, face_features, frame_shape, coordinates)
+                        elif filter == 'PIRATE_FILTER':
+                            frame = pirate_filter(frame, overlay, face_features, frame_shape, coordinates)
                         else:
                             # else
                             pass
 
-
-
             # Display the frame with overlays
-            cv2.imshow('Face Features Detection and Filters', frame)
+            cv2.imshow(filter, frame)
             
             if cv2.waitKey(20) & 0xFF == ord("q"):
                 break
@@ -86,3 +86,6 @@ def face_detect_and_filter(filter):
 
 # TEST
 #face_detect_and_filter('COWBOY_FILTER')
+#face_detect_and_filter('POLICE_FILTER')
+#face_detect_and_filter('PIRATE_FILTER')
+#face_detect_and_filter('SUNGLASSES_FILTER')
