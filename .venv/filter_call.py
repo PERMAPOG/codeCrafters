@@ -6,7 +6,7 @@ def load_overlay_images(filter):
         hat_image = cv2.imread('./Static/images/hat.png', -1)
         mustache_image = cv2.imread('./Static/images/mustache.png', -1)
         return hat_image, mustache_image
-    elif filter == 'SUNGLASSES_FILTER':
+    elif filter == 'BOSSMODE_FILTER':
         # Load the boss mode image
         img = cv2.imread('./Static/images/bossMode.png', -1)
         return img
@@ -25,9 +25,6 @@ def load_overlay_images(filter):
     else:
         # else
         return
-
-
-
 
 def cowboy_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     hat_image, mustache_image = overlay
@@ -51,7 +48,7 @@ def cowboy_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
 
 
     # Overlay the hat on top of the head
-    hat_height = int(eye_distance * 3.65) # adjust this factor to get the desired hat size
+    hat_height = int(eye_distance * 3) # adjust this factor to get the desired hat size
     hat_width = int(hat_height * hat_image.shape[1] / hat_image.shape[0])
 
 
@@ -112,9 +109,6 @@ def cowboy_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
 
     return frame
 
-
-
-
 def bossModeFilter(frame, overlay, face_landmarks, frame_shape):
     img = overlay
     frameh, framew = frame_shape
@@ -130,7 +124,7 @@ def bossModeFilter(frame, overlay, face_landmarks, frame_shape):
 
 
     # Overlay the image on top of the head
-    img_height = int(eye_distance * 6) # adjust this factor to get the desired hat size
+    img_height = int(eye_distance * 5) # adjust this factor to get the desired hat size
     img_width = int(img_height * img.shape[1] / img.shape[0])
 
     # Ensure the image is within the frame
@@ -157,8 +151,6 @@ def bossModeFilter(frame, overlay, face_landmarks, frame_shape):
         print("An exception occurred:", str(e))
 
     return frame
-
-
 
 def police_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     police_hat, police_glasses, police_mustache = overlay
@@ -213,8 +205,6 @@ def police_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     except Exception as e:
         print("An exception occurred:", str(e))
 
-
-
     # GLASSES
     # glasses size (adjust as needed)
     glasses_height = int(eye_distance * 2)
@@ -245,8 +235,6 @@ def police_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     except Exception as e:
         print("An exception occurred:", str(e))
     
-
-
     # Overlay the mustache on the upper lip
     # mustache SIZE(adjust as need)
     mustache_height = int(h * 0.95)
@@ -282,8 +270,6 @@ def police_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     return frame
 
 
-
-
 def pirate_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     pirate_hat, pirate_eyepatch, pirate_beard = overlay
     frameh, framew = frame_shape
@@ -307,8 +293,6 @@ def pirate_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     # Adjust as needed
     upper_lip_x = int(face_landmarks.landmark[13].x * framew)
     upper_lip_y = int(face_landmarks.landmark[13].y * frameh) + 30
-
-
 
     # EYEPATCH
     # eyepatch size (adjust as needed)
@@ -340,8 +324,6 @@ def pirate_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
                                                                                         eyepatch_x:eyepatch_x_end, c]
     except Exception as e:
         print("An exception occurred:", str(e))
-
-
 
     # BEARD
     # beard SIZE(adjust as need)
@@ -375,10 +357,8 @@ def pirate_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     except Exception as e:
         print("An exception occurred:", str(e))
 
-
-
     # Overlay the hat on top of the head
-    hat_height = int(eye_distance * 3.3) # adjust this factor to get the desired hat size
+    hat_height = int(eye_distance * 3) # adjust this factor to get the desired hat size
     hat_width = int(hat_height * pirate_hat.shape[1] / pirate_hat.shape[0])
 
     # Ensure the hat is within the frame
@@ -404,5 +384,4 @@ def pirate_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     except Exception as e:
         print("An exception occurred:", str(e))
     
-
     return frame

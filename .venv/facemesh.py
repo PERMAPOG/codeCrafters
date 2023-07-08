@@ -6,6 +6,33 @@ import matplotlib.pyplot as plt
 import insightface
 from insightface.app import FaceAnalysis
 
+def captureFrame():
+    # Turn on the webcam
+    cap = cv2.VideoCapture(0)
+
+    while cap.isOpened():
+        ret, frame = cap.read()
+        
+        # Check if frame was successfully read
+        if not ret:
+            print("Failed to grab frame")
+            break
+
+        swapped_frame = face_swap_vid(frame)
+        
+        # Display the resulting frame
+        cv2.imshow('Face Swapped Video', swapped_frame)
+
+        # Break the loop on 'q' key press
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    # After the loop release the cap object and destroy all windows
+    cap.release()
+    cv2.destroyAllWindows()
+
+    return
+
 #Face Swap Function for Live video
 def face_swap_vid(image):
     app = FaceAnalysis(name="buffalo_l") #face detection model provided by insigthface
@@ -43,7 +70,7 @@ def face_swap_pic():
     will_face = will_faces[0]
 
     #Target image that wants to be altered
-    target = cv2.imread('byron.jpg')
+    target = cv2.imread('byron.jpeg')
     target_faces = app.get(target)
     target_face = target_faces[0]
 
@@ -66,8 +93,6 @@ def face_swap_pic():
     ax.imshow(res[:,:,::-1])
     ax.axis('off')
     plt.show()
-    
-
 
 def facemeshapp():
     # mediapipe face mesh

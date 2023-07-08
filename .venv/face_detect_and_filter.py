@@ -61,7 +61,7 @@ def face_detect_and_filter(filter):
                         # filter function call!!!!!!!!!!!!!!
                         if filter == 'COWBOY_FILTER':
                             frame = cowboy_filter(frame, overlay, face_features, frame_shape, coordinates)
-                        elif filter == 'SUNGLASSES_FILTER':
+                        elif filter == 'BOSSMODE_FILTER':
                             # function call here
                             frame = bossModeFilter(frame, overlay, face_features, frame_shape)
                         elif filter == 'POLICE_FILTER':
