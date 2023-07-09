@@ -56,8 +56,11 @@ def face_swap_vid(image):
     swapper = insightface.model_zoo.get_model("inswapper_128.onnx", download=False,download_zip=False)
 
     target = swapper.get(target, target_face, will_face, paste_back=True)
+    
+    # Convert the color of the image back from RGB to BGR format.
+    img_bgr = cv2.cvtColor(target, cv2.COLOR_RGB2BGR)
 
-    return target
+    return img_bgr
 
 #Void function, call it and it will swap Will Smiths face on a picture of mine 
 def face_swap_pic():
