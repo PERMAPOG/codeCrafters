@@ -3,24 +3,24 @@ import numpy as np
 def load_overlay_images(filter):
     if filter == 'COWBOY_FILTER':
         # Load the hat and mustache images
-        hat_image = cv2.imread('./Static/images/hat.png', -1)
-        mustache_image = cv2.imread('./Static/images/mustache.png', -1)
+        hat_image = cv2.imread('../Static/images/hat.png', -1)
+        mustache_image = cv2.imread('../Static/images/mustache.png', -1)
         return hat_image, mustache_image
     elif filter == 'BOSSMODE_FILTER':
         # Load the boss mode image
-        img = cv2.imread('./Static/images/bossMode.png', -1)
+        img = cv2.imread('../Static/images/bossMode.png', -1)
         return img
     elif filter == 'PIRATE_FILTER':
         # load overlay
-        pirate_hat = cv2.imread('./Static/images/pirate_hat.png', -1)
-        pirate_eyepatch = cv2.imread('./Static/images/pirate_eyepatch.png', -1)
-        pirate_beard = cv2.imread('./Static/images/pirate_beard.png', -1)
+        pirate_hat = cv2.imread('../Static/images/pirate_hat.png', -1)
+        pirate_eyepatch = cv2.imread('../Static/images/pirate_eyepatch.png', -1)
+        pirate_beard = cv2.imread('../Static/images/pirate_beard.png', -1)
         return pirate_hat, pirate_eyepatch, pirate_beard
     elif filter == 'POLICE_FILTER':
         # load overlay
-        police_hat = cv2.imread('./Static/images/police_hat.png', -1)
-        police_glasses = cv2.imread('./Static/images/police_glasses.png', -1)
-        police_mustache = cv2.imread('./Static/images/police_mustache.png', -1)
+        police_hat = cv2.imread('../Static/images/police_hat.png', -1)
+        police_glasses = cv2.imread('../Static/images/police_glasses.png', -1)
+        police_mustache = cv2.imread('../Static/images/police_mustache.png', -1)
         return police_hat, police_glasses, police_mustache
     else:
         # else

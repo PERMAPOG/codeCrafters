@@ -1,6 +1,6 @@
 import cv2
 import mediapipe as mp
-from filter_call import cowboy_filter, load_overlay_images, bossModeFilter, police_filter, pirate_filter
+from facialshifter.filter_call import cowboy_filter, load_overlay_images, bossModeFilter, police_filter, pirate_filter
 
 def face_detect_and_filter(filter):
     # load filter overlay images
@@ -81,11 +81,3 @@ def face_detect_and_filter(filter):
 
     cap.release()
     cv2.destroyAllWindows()
-
-
-
-# TEST
-#face_detect_and_filter('COWBOY_FILTER')
-#face_detect_and_filter('POLICE_FILTER')
-#face_detect_and_filter('PIRATE_FILTER')
-#face_detect_and_filter('SUNGLASSES_FILTER')
