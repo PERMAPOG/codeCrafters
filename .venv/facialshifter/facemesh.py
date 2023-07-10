@@ -77,12 +77,7 @@ def face_swap_pic():
     target_faces = app.get(target)
     target_face = target_faces[0]
 
-    #The code below is to test if it is detected the face
-    #uncomment to test:
-    #bbox = target_face['bbox']
-    #bbox = [int(b) for b in bbox]
-    #plt.imshow(target[bbox[1]:bbox[3],bbox[0]:bbox[2],::-1])
-    #plt.show()
+
 
     res = target.copy() #make a copy of target photo to not alter original
 
