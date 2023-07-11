@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module still_image_filter</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">still_image_filter</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cchris%5Cdocuments%5Cgithub%5Ccodecrafters%5C.venv%5Cstill_image_filter.py">c:\users\chris\documents\github\codecrafters\.venv\still_image_filter.py</a></td></tr></table>
+    <p><span class="code">still_image_filter.py<br>
+&nbsp;<br>
+Description:&nbsp;This&nbsp;code&nbsp;applies&nbsp;a&nbsp;filter&nbsp;to&nbsp;images,&nbsp;placing&nbsp;the&nbsp;filter&nbsp;onto&nbsp;faces&nbsp;detected&nbsp;in&nbsp;the&nbsp;images.<br>
+&nbsp;<br>
+Author:&nbsp;Christian&nbsp;Jaime<br>
+Version:&nbsp;1.0<br>
+Date:&nbsp;7/7/2023<br>
+&nbsp;<br>
+Modules:<br>
+-&nbsp;cv2:&nbsp;OpenCV&nbsp;for&nbsp;image&nbsp;processing.<br>
+-&nbsp;numpy:&nbsp;NumPy&nbsp;for&nbsp;numerical&nbsp;operations.<br>
+-&nbsp;mediapipe:&nbsp;MediaPipe&nbsp;for&nbsp;face&nbsp;mesh&nbsp;detection.<br>
+&nbsp;<br>
+Functions:<br>
+-&nbsp;<a href="#-read_image">read_image</a>(image_file)<br>
+-&nbsp;<a href="#-apply_filter">apply_filter</a>(img,&nbsp;face_mesh_images,&nbsp;filter)<br>
+-&nbsp;<a href="#-get_filter_params">get_filter_params</a>(face_landmarks,&nbsp;img_shape,&nbsp;filter_shape)<br>
+-&nbsp;<a href="#-overlay_filter">overlay_filter</a>(img,&nbsp;new_filter,&nbsp;left_eye_corner,&nbsp;right_eye_corner)<br>
+-&nbsp;<a href="#-display_images">display_images</a>(original_images,&nbsp;filtered_images)<br>
+-&nbsp;<a href="#-bossModeImage">bossModeImage</a>()&nbsp;[main&nbsp;function]</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="cv2.html">cv2</a><br>
+</td><td class="multicolumn"><a href="mediapipe.html">mediapipe</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"><a href="pydoc.html">pydoc</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-apply_filter"><strong>apply_filter</strong></a>(img, face_mesh_images, filter)</dt><dd><span class="code">Applies&nbsp;a&nbsp;filter&nbsp;to&nbsp;a&nbsp;face&nbsp;in&nbsp;an&nbsp;image.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;img:&nbsp;The&nbsp;image&nbsp;that&nbsp;the&nbsp;filter&nbsp;will&nbsp;be&nbsp;placed&nbsp;ontop&nbsp;of.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;face_mesh_images:&nbsp;The&nbsp;Mediapipe&nbsp;FaceMesh&nbsp;object.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filter:&nbsp;The&nbsp;filter&nbsp;that&nbsp;will&nbsp;be&nbsp;applied.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;image&nbsp;with&nbsp;the&nbsp;filter&nbsp;applied.</span></dd></dl>
+ <dl><dt><a name="-bossModeImage"><strong>bossModeImage</strong></a>()</dt><dd><span class="code">The&nbsp;main&nbsp;function&nbsp;that&nbsp;runs&nbsp;the&nbsp;script.</span></dd></dl>
+ <dl><dt><a name="-display_images"><strong>display_images</strong></a>(original_images, filtered_images)</dt><dd><span class="code">Displays&nbsp;the&nbsp;original&nbsp;and&nbsp;filtered&nbsp;images.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;original_images:&nbsp;A&nbsp;list&nbsp;of&nbsp;original&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filtered_images:&nbsp;A&nbsp;list&nbsp;of&nbsp;filtered&nbsp;images.</span></dd></dl>
+ <dl><dt><a name="-get_filter_params"><strong>get_filter_params</strong></a>(face_landmarks, img_shape, filter_shape)</dt><dd><span class="code">Calculates&nbsp;the&nbsp;parameters&nbsp;for&nbsp;applying&nbsp;filter.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;face_landmarks:&nbsp;The&nbsp;detected&nbsp;face&nbsp;landmarks.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;img_shape:&nbsp;The&nbsp;shape&nbsp;of&nbsp;the&nbsp;image.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filter_shape:&nbsp;The&nbsp;shape&nbsp;of&nbsp;the&nbsp;filter.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;args&nbsp;of&nbsp;the&nbsp;left&nbsp;eye&nbsp;corner,&nbsp;right&nbsp;eye&nbsp;corner,&nbsp;filter&nbsp;width&nbsp;and&nbsp;ratio.</span></dd></dl>
+ <dl><dt><a name="-overlay_filter"><strong>overlay_filter</strong></a>(img, new_filter, left_eye_corner, right_eye_corner)</dt><dd><span class="code">Overlays&nbsp;the&nbsp;filter&nbsp;onto&nbsp;the&nbsp;image.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;img:&nbsp;The&nbsp;image&nbsp;that&nbsp;the&nbsp;filter&nbsp;will&nbsp;be&nbsp;applied&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;new_filter:&nbsp;The&nbsp;resized&nbsp;filter.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;left_eye_corner:&nbsp;The&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;left&nbsp;eye&nbsp;corner.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;right_eye_corner:&nbsp;The&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;right&nbsp;eye&nbsp;corner.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;image&nbsp;with&nbsp;the&nbsp;filter&nbsp;overlayed.</span></dd></dl>
+ <dl><dt><a name="-read_image"><strong>read_image</strong></a>(image_file)</dt><dd><span class="code">Reads&nbsp;an&nbsp;image&nbsp;from&nbsp;a&nbsp;file&nbsp;and&nbsp;converts&nbsp;it&nbsp;from&nbsp;BGR&nbsp;to&nbsp;RGB.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;image_file:&nbsp;The&nbsp;path&nbsp;of&nbsp;the&nbsp;image&nbsp;file.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;image&nbsp;in&nbsp;RGB.</span></dd></dl>
+</td></tr></table>
+</body></html>
