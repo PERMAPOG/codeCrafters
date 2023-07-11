@@ -1,9 +1,35 @@
+"""
+main.py
+
+Description: GUI for the application. 
+
+Author: Josue Sanchez
+Version: 1.0
+Date: 7/7/2023
+
+Modules:
+- tkinter, customtkinter: used for creating customized GUI
+- PIL: Python library used for image processing
+- faceshapp: used to demo face detection
+- face_swap_pic: used to modify images with face swap
+- captureFrame: used for face swaping on video
+- face_detect_and_filter: used to activate different filters in live video
+- bossModeImage: used to modify images with bossMode filter
+- Image: used to open image files for buttons
+
+Functions:
+- welcome()
+- image_or_video(welcome_frame)
+- image_app(option_frame):
+- video_app(option_frame)
+"""
+
 import tkinter as tk
 import customtkinter
 from facialshifter.facemesh import facemeshapp, face_swap_pic, captureFrame
 from facialshifter.face_detect_and_filter import  face_detect_and_filter
 from facialshifter.still_image_filter import bossModeImage
-from PIL import Image, ImageTk
+from PIL import Image
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("blue")
@@ -17,8 +43,16 @@ app.title("Facial Shifter")
 app.grid_rowconfigure(0, weight=1)
 app.grid_columnconfigure(0, weight=1)
 
-# Define a function to display the welcome frame
 def welcome():
+    """
+    Creates and displays the opening frame of the application
+
+    Args:
+        None
+    
+    Returns:
+        Nothing
+    """
     # Create a welcome frame
     welcome_frame = customtkinter.CTkFrame(app)
     welcome_frame.grid(row=0, column=0, sticky='nsew')  # Make it fill the entire window
@@ -36,8 +70,18 @@ def welcome():
     start_button = customtkinter.CTkButton(welcome_frame, text="Get Started", command=lambda: image_or_video(welcome_frame))
     start_button.grid(row=1, column=1, padx=10, pady=10)
 
-# Define a function to display the options frame
 def image_or_video(welcome_frame):
+    """
+    Removes the previous frame on the application. Creates and displays
+    the option frame where users will choose to between using the filters
+    on images or live video
+    
+    Args:
+        None
+    
+    Returns:
+        Nothing
+    """
     welcome_frame.grid_remove()  # Remove the welcome frame
 
     # Create a welcome frame
@@ -60,8 +104,17 @@ def image_or_video(welcome_frame):
     video_button = customtkinter.CTkButton(option_frame, text="Live Video", command=lambda: video_app(option_frame))
     video_button.grid(row=1, column=1, padx=10, pady=10)
 
-# Define a function to display the image filters
 def image_app(option_frame):
+    """
+    Removes the previous frame on the application. Creates and displays
+    the image frame where users will choose a filter to apply to images.
+    
+    Args:
+        None
+    
+    Returns:
+        Nothing
+    """
     option_frame.grid_remove()  # Remove the welcome frame
 
     # Create a main app frame
@@ -91,8 +144,17 @@ def image_app(option_frame):
     back_button = customtkinter.CTkButton(image_frame, text="Go back", command=lambda: image_or_video(option_frame))
     back_button.grid(row=2, column=0, columnspan=4, padx=10, pady=10)
 
-# Define a function to display the video filters
 def video_app(option_frame):
+    """
+    Removes the previous frame on the application. Creates and displays
+    the video frame where users will choose a filter to apply to live video.
+    
+    Args:
+        None
+    
+    Returns:
+        Nothing
+    """
     option_frame.grid_remove()  # Remove the welcome frame
 
     # Create a main app frame
