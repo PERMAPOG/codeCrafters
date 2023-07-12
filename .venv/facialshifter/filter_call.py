@@ -1,6 +1,33 @@
+"""
+filter_call.py
+
+Description: This class loads overlay images to apply filters on each video frame and retrieves facial feature coordinates to apply the overlay.
+
+Author: Carlos Figueroa
+Version: 1.0
+Date: 7/12/2023
+
+Methods:
+    - load_overlay_images(filter): Loads the overlay images based on the specified filter.
+    - cowboy_filter(frame, overlay, face_landmarks, frame_shape, coordinates): Applies the cowboy filter overlay on the frame using the provided overlay images and facial feature coordinates.
+    - bossModeFilter(frame, overlay, face_landmarks, frame_shape): Applies the boss mode filter overlay on the frame using the provided overlay image and facial feature coordinates.
+    - police_filter(frame, overlay, face_landmarks, frame_shape, coordinates): Applies the police filter overlay on the frame using the provided overlay images and facial feature coordinates.
+    - pirate_filter(frame, overlay, face_landmarks, frame_shape, coordinates): Applies the pirate filter overlay on the frame using the provided overlay images and facial feature coordinates.
+"""
+
 import cv2
 import numpy as np
+
+
 def load_overlay_images(filter):
+    """
+    Loads the overlay images based on the specified filter.
+
+    Args:
+        filter (str): The name of the filter to be applied.
+    Returns:
+        tuple: A tuple containing the overlay images.
+    """
     if filter == 'COWBOY_FILTER':
         # Load the hat and mustache images
         hat_image = cv2.imread('../Static/images/hat.png', -1)
@@ -26,7 +53,21 @@ def load_overlay_images(filter):
         # else
         return
 
+
+
 def cowboy_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
+    """
+    Applies the cowboy filter overlay on the frame using the provided overlay images and facial feature coordinates.
+    
+    Args:
+        frame (numpy.ndarray): The input video frame.
+        overlay (tuple): A tuple containing the overlay images.
+        face_landmarks (numpy.ndarray): The facial landmarks detected in the frame.
+        frame_shape (tuple): The shape of the frame.
+        coordinates (tuple): The coordinates of the face bounding box.
+    Returns:
+        numpy.ndarray: The frame with the cowboy filter overlay applied.
+    """
     hat_image, mustache_image = overlay
     frameh, framew = frame_shape
     x, y, w, h = coordinates
@@ -109,7 +150,21 @@ def cowboy_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
 
     return frame
 
+
+
 def bossModeFilter(frame, overlay, face_landmarks, frame_shape):
+    """
+    Applies the boss mode filter overlay on the frame using the provided overlay image and facial feature coordinates.
+    
+    Args:
+        frame (numpy.ndarray): The input video frame.
+        overlay (tuple): A tuple containing the overlay images.
+        face_landmarks (numpy.ndarray): The facial landmarks detected in the frame.
+        frame_shape (tuple): The shape of the frame.
+        coordinates (tuple): The coordinates of the face bounding box.
+    Returns:
+        numpy.ndarray: The frame with the boss mode filter overlay applied.
+    """
     img = overlay
     frameh, framew = frame_shape
 
@@ -152,7 +207,21 @@ def bossModeFilter(frame, overlay, face_landmarks, frame_shape):
 
     return frame
 
+
+
 def police_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
+    """
+    Applies the police filter overlay on the frame using the provided overlay image and facial feature coordinates.
+    
+    Args:
+        frame (numpy.ndarray): The input video frame.
+        overlay (tuple): A tuple containing the overlay images.
+        face_landmarks (numpy.ndarray): The facial landmarks detected in the frame.
+        frame_shape (tuple): The shape of the frame.
+        coordinates (tuple): The coordinates of the face bounding box.
+    Returns:
+        numpy.ndarray: The frame with the police filter overlay applied.
+    """
     police_hat, police_glasses, police_mustache = overlay
     frameh, framew = frame_shape
     x, y, w, h = coordinates
@@ -270,7 +339,20 @@ def police_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
     return frame
 
 
+
 def pirate_filter(frame, overlay, face_landmarks, frame_shape, coordinates):
+    """
+    Applies the pirate filter overlay on the frame using the provided overlay image and facial feature coordinates.
+    
+    Args:
+        frame (numpy.ndarray): The input video frame.
+        overlay (tuple): A tuple containing the overlay images.
+        face_landmarks (numpy.ndarray): The facial landmarks detected in the frame.
+        frame_shape (tuple): The shape of the frame.
+        coordinates (tuple): The coordinates of the face bounding box.
+    Returns:
+        numpy.ndarray: The frame with the pirate filter overlay applied.
+    """
     pirate_hat, pirate_eyepatch, pirate_beard = overlay
     frameh, framew = frame_shape
     x, y, w, h = coordinates

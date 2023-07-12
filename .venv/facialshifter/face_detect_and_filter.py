@@ -1,8 +1,36 @@
+"""
+face_detect_and_filter.py
+
+Description: This class performs real-time face detection and applies an overlay filter to each frame of a video stream.
+
+Author: Carlos Figueroa
+Version: 1.0
+Date: 7/12/2023
+
+Modules:
+    - cv2: OpenCV library for computer vision tasks
+    - mediapipe: Library for building ML pipelines
+    - facialshifter.filter_call: Module containing filter functions for different overlays
+
+Methods:
+    - face_detect_and_filter(filter): Performs real-time face detection and applies the specified overlay filter to the live video stream.
+"""
+
 import cv2
 import mediapipe as mp
 from facialshifter.filter_call import cowboy_filter, load_overlay_images, bossModeFilter, police_filter, pirate_filter
 
 def face_detect_and_filter(filter):
+    """
+    Performs real-time face detection and applies the specified filter to the live video stream.
+
+    Args:
+        filter (str): The name of the filter to be applied.
+        
+    Returns:
+        None
+    """
+    
     # load filter overlay images
     overlay = load_overlay_images(filter)
 
