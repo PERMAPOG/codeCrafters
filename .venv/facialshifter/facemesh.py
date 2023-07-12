@@ -1,3 +1,30 @@
+"""
+facemesh.py
+
+Description: This code captures frames from the webcam and performs live face swapping using the insightface library.
+It also does the face swap on static images.
+It also includes a face mesh detection application using MediaPipe.
+
+Author: Byron Munguia Najera
+Version: 1.0
+Date: 7/11/2023
+
+Modules:
+- cv2: OpenCV for image and video processing.
+- itertools: Provides various functions for efficient iteration.
+- numpy: NumPy for numerical operations.
+- mediapipe: MediaPipe for face mesh detection.
+- matplotlib.pyplot: Matplotlib for displaying images.
+- insightface: InsightFace for face analysis and face swapping.
+
+Functions:
+- captureFrame(): Captures frames from the webcam and displays a live face-swapped video.
+- face_swap_vid(image): Performs face swapping on a video frame using the insightface library.
+- face_swap_pic(): Performs face swapping on a static image using the insightface library.
+- facemeshapp(): Runs a face mesh detection application using MediaPipe.
+
+"""
+
 import cv2
 import itertools
 import numpy as np
@@ -7,6 +34,20 @@ import insightface
 from insightface.app import FaceAnalysis
 
 def captureFrame():
+
+"""
+    Captures frames from the webcam and displays a live face-swapped video.
+
+    Uses the OpenCV library to access the webcam and perform live face swapping using the insightface library.
+
+    Press 'q' to quit the video stream.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     # Turn on the webcam
     cap = cv2.VideoCapture(0)
 
@@ -35,6 +76,17 @@ def captureFrame():
 
 #Face Swap Function for Live video
 def face_swap_vid(image):
+"""
+    Performs face swapping on a video frame.
+
+    Uses the insightface library and a pre-trained face detection model to detect and swap faces in a video frame.
+
+    Args:
+        image: The video frame to perform face swapping on.
+
+    Returns:
+        The video frame with swapped faces.
+    """
     app = FaceAnalysis(name="buffalo_l") #face detection model provided by insigthface
     app.prepare(ctx_id=0, det_size=(640,640))
 
@@ -64,6 +116,20 @@ def face_swap_vid(image):
 
 #Void function, call it and it will swap Will Smiths face on a picture of mine 
 def face_swap_pic():
+
+"""
+    Performs face swapping on a static image.
+
+    Uses the insightface library and a pre-trained face detection model to detect and swap faces in a static image.
+
+    Displays the resulting image after face swapping.
+
+    Args:
+        None
+
+    Returns:
+        None
+    """
     app = FaceAnalysis(name="buffalo_l") #face detection model
     app.prepare(ctx_id=0, det_size=(640,640))
 
@@ -95,6 +161,18 @@ def face_swap_pic():
     return
 
 def facemeshapp():
+
+"""
+    Runs a face mesh detection application using MediaPipe.
+
+    Opens the webcam and applies face mesh detection using the MediaPipe library.
+    Draws annotations on the video frame, including tesselation, contours, and irises.
+
+    Press 'q' to quit the application.
+
+    Returns:
+        None
+    """
     # mediapipe face mesh
     face_mesh = mp.solutions.face_mesh
 
