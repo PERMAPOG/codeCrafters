@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module facemesh</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">facemesh</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cchris%5Cdocuments%5Cgithub%5Ccodecrafters%5C.venv%5Cfacialshifter%5Cfacemesh.py">c:\users\chris\documents\github\codecrafters\.venv\facialshifter\facemesh.py</a></td></tr></table>
+    <p><span class="code">facemesh.py<br>
+&nbsp;<br>
+Description:&nbsp;This&nbsp;code&nbsp;captures&nbsp;frames&nbsp;from&nbsp;the&nbsp;webcam&nbsp;and&nbsp;performs&nbsp;live&nbsp;face&nbsp;swapping&nbsp;using&nbsp;the&nbsp;insightface&nbsp;library.<br>
+It&nbsp;also&nbsp;does&nbsp;the&nbsp;face&nbsp;swap&nbsp;on&nbsp;static&nbsp;images.<br>
+It&nbsp;also&nbsp;includes&nbsp;a&nbsp;face&nbsp;mesh&nbsp;detection&nbsp;application&nbsp;using&nbsp;MediaPipe.<br>
+&nbsp;<br>
+Author:&nbsp;Byron&nbsp;Munguia&nbsp;Najera<br>
+Version:&nbsp;1.0<br>
+Date:&nbsp;7/11/2023<br>
+&nbsp;<br>
+Modules:<br>
+-&nbsp;cv2:&nbsp;OpenCV&nbsp;for&nbsp;image&nbsp;and&nbsp;video&nbsp;processing.<br>
+-&nbsp;itertools:&nbsp;Provides&nbsp;various&nbsp;functions&nbsp;for&nbsp;efficient&nbsp;iteration.<br>
+-&nbsp;numpy:&nbsp;NumPy&nbsp;for&nbsp;numerical&nbsp;operations.<br>
+-&nbsp;mediapipe:&nbsp;MediaPipe&nbsp;for&nbsp;face&nbsp;mesh&nbsp;detection.<br>
+-&nbsp;matplotlib.pyplot:&nbsp;Matplotlib&nbsp;for&nbsp;displaying&nbsp;images.<br>
+-&nbsp;insightface:&nbsp;InsightFace&nbsp;for&nbsp;face&nbsp;analysis&nbsp;and&nbsp;face&nbsp;swapping.<br>
+&nbsp;<br>
+Functions:<br>
+-&nbsp;<a href="#-captureFrame">captureFrame</a>():&nbsp;Captures&nbsp;frames&nbsp;from&nbsp;the&nbsp;webcam&nbsp;and&nbsp;displays&nbsp;a&nbsp;live&nbsp;face-swapped&nbsp;video.<br>
+-&nbsp;<a href="#-face_swap_vid">face_swap_vid</a>(image):&nbsp;Performs&nbsp;face&nbsp;swapping&nbsp;on&nbsp;a&nbsp;video&nbsp;frame&nbsp;using&nbsp;the&nbsp;insightface&nbsp;library.<br>
+-&nbsp;<a href="#-face_swap_pic">face_swap_pic</a>():&nbsp;Performs&nbsp;face&nbsp;swapping&nbsp;on&nbsp;a&nbsp;static&nbsp;image&nbsp;using&nbsp;the&nbsp;insightface&nbsp;library.<br>
+-&nbsp;<a href="#-facemeshapp">facemeshapp</a>():&nbsp;Runs&nbsp;a&nbsp;face&nbsp;mesh&nbsp;detection&nbsp;application&nbsp;using&nbsp;MediaPipe.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="cv2.html">cv2</a><br>
+<a href="insightface.html">insightface</a><br>
+</td><td class="multicolumn"><a href="itertools.html">itertools</a><br>
+<a href="mediapipe.html">mediapipe</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+<a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-captureFrame"><strong>captureFrame</strong></a>()</dt><dd><span class="code">Captures&nbsp;frames&nbsp;from&nbsp;the&nbsp;webcam&nbsp;and&nbsp;displays&nbsp;a&nbsp;live&nbsp;face-swapped&nbsp;video.<br>
+&nbsp;<br>
+Uses&nbsp;the&nbsp;OpenCV&nbsp;library&nbsp;to&nbsp;access&nbsp;the&nbsp;webcam&nbsp;and&nbsp;perform&nbsp;live&nbsp;face&nbsp;swapping&nbsp;using&nbsp;the&nbsp;insightface&nbsp;library.<br>
+&nbsp;<br>
+Press&nbsp;'q'&nbsp;to&nbsp;quit&nbsp;the&nbsp;video&nbsp;stream.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+ <dl><dt><a name="-face_swap_pic"><strong>face_swap_pic</strong></a>()</dt><dd><span class="code">Performs&nbsp;face&nbsp;swapping&nbsp;on&nbsp;a&nbsp;static&nbsp;image.<br>
+&nbsp;<br>
+Uses&nbsp;the&nbsp;insightface&nbsp;library&nbsp;and&nbsp;a&nbsp;pre-trained&nbsp;face&nbsp;detection&nbsp;model&nbsp;to&nbsp;detect&nbsp;and&nbsp;swap&nbsp;faces&nbsp;in&nbsp;a&nbsp;static&nbsp;image.<br>
+&nbsp;<br>
+Displays&nbsp;the&nbsp;resulting&nbsp;image&nbsp;after&nbsp;face&nbsp;swapping.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+ <dl><dt><a name="-face_swap_vid"><strong>face_swap_vid</strong></a>(image)</dt><dd><span class="code">Performs&nbsp;face&nbsp;swapping&nbsp;on&nbsp;a&nbsp;video&nbsp;frame.<br>
+&nbsp;<br>
+Uses&nbsp;the&nbsp;insightface&nbsp;library&nbsp;and&nbsp;a&nbsp;pre-trained&nbsp;face&nbsp;detection&nbsp;model&nbsp;to&nbsp;detect&nbsp;and&nbsp;swap&nbsp;faces&nbsp;in&nbsp;a&nbsp;video&nbsp;frame.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;image:&nbsp;The&nbsp;video&nbsp;frame&nbsp;to&nbsp;perform&nbsp;face&nbsp;swapping&nbsp;on.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;video&nbsp;frame&nbsp;with&nbsp;swapped&nbsp;faces.</span></dd></dl>
+ <dl><dt><a name="-facemeshapp"><strong>facemeshapp</strong></a>()</dt><dd><span class="code">Runs&nbsp;a&nbsp;face&nbsp;mesh&nbsp;detection&nbsp;application&nbsp;using&nbsp;MediaPipe.<br>
+&nbsp;<br>
+Opens&nbsp;the&nbsp;webcam&nbsp;and&nbsp;applies&nbsp;face&nbsp;mesh&nbsp;detection&nbsp;using&nbsp;the&nbsp;MediaPipe&nbsp;library.<br>
+Draws&nbsp;annotations&nbsp;on&nbsp;the&nbsp;video&nbsp;frame,&nbsp;including&nbsp;tesselation,&nbsp;contours,&nbsp;and&nbsp;irises.<br>
+&nbsp;<br>
+Press&nbsp;'q'&nbsp;to&nbsp;quit&nbsp;the&nbsp;application.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+</td></tr></table>
+</body></html>

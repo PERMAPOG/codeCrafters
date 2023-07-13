@@ -35,7 +35,7 @@ from insightface.app import FaceAnalysis
 
 def captureFrame():
 
-"""
+    """
     Captures frames from the webcam and displays a live face-swapped video.
 
     Uses the OpenCV library to access the webcam and perform live face swapping using the insightface library.
@@ -76,7 +76,7 @@ def captureFrame():
 
 #Face Swap Function for Live video
 def face_swap_vid(image):
-"""
+    """
     Performs face swapping on a video frame.
 
     Uses the insightface library and a pre-trained face detection model to detect and swap faces in a video frame.
@@ -117,7 +117,7 @@ def face_swap_vid(image):
 #Void function, call it and it will swap Will Smiths face on a picture of mine 
 def face_swap_pic():
 
-"""
+    """
     Performs face swapping on a static image.
 
     Uses the insightface library and a pre-trained face detection model to detect and swap faces in a static image.
@@ -162,7 +162,7 @@ def face_swap_pic():
 
 def facemeshapp():
 
-"""
+    """
     Runs a face mesh detection application using MediaPipe.
 
     Opens the webcam and applies face mesh detection using the MediaPipe library.

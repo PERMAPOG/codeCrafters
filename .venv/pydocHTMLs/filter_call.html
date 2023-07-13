@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module filter_call</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">filter_call</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cchris%5Cdocuments%5Cgithub%5Ccodecrafters%5C.venv%5Cfacialshifter%5Cfilter_call.py">c:\users\chris\documents\github\codecrafters\.venv\facialshifter\filter_call.py</a></td></tr></table>
+    <p><span class="code">filter_call.py<br>
+&nbsp;<br>
+Description:&nbsp;This&nbsp;class&nbsp;loads&nbsp;overlay&nbsp;images&nbsp;to&nbsp;apply&nbsp;filters&nbsp;on&nbsp;each&nbsp;video&nbsp;frame&nbsp;and&nbsp;retrieves&nbsp;facial&nbsp;feature&nbsp;coordinates&nbsp;to&nbsp;apply&nbsp;the&nbsp;overlay.<br>
+&nbsp;<br>
+Author:&nbsp;Carlos&nbsp;Figueroa<br>
+Version:&nbsp;1.0<br>
+Date:&nbsp;7/12/2023<br>
+&nbsp;<br>
+Methods:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#-load_overlay_images">load_overlay_images</a>(filter):&nbsp;Loads&nbsp;the&nbsp;overlay&nbsp;images&nbsp;based&nbsp;on&nbsp;the&nbsp;specified&nbsp;filter.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#-cowboy_filter">cowboy_filter</a>(frame,&nbsp;overlay,&nbsp;face_landmarks,&nbsp;frame_shape,&nbsp;coordinates):&nbsp;Applies&nbsp;the&nbsp;cowboy&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;images&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#-bossModeFilter">bossModeFilter</a>(frame,&nbsp;overlay,&nbsp;face_landmarks,&nbsp;frame_shape):&nbsp;Applies&nbsp;the&nbsp;boss&nbsp;mode&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;image&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#-police_filter">police_filter</a>(frame,&nbsp;overlay,&nbsp;face_landmarks,&nbsp;frame_shape,&nbsp;coordinates):&nbsp;Applies&nbsp;the&nbsp;police&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;images&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;<a href="#-pirate_filter">pirate_filter</a>(frame,&nbsp;overlay,&nbsp;face_landmarks,&nbsp;frame_shape,&nbsp;coordinates):&nbsp;Applies&nbsp;the&nbsp;pirate&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;images&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="cv2.html">cv2</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-bossModeFilter"><strong>bossModeFilter</strong></a>(frame, overlay, face_landmarks, frame_shape)</dt><dd><span class="code">Applies&nbsp;the&nbsp;boss&nbsp;mode&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;image&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame&nbsp;(numpy.ndarray):&nbsp;The&nbsp;input&nbsp;video&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;overlay&nbsp;(tuple):&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;overlay&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;face_landmarks&nbsp;(numpy.ndarray):&nbsp;The&nbsp;facial&nbsp;landmarks&nbsp;detected&nbsp;in&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame_shape&nbsp;(tuple):&nbsp;The&nbsp;shape&nbsp;of&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;coordinates&nbsp;(tuple):&nbsp;The&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;face&nbsp;bounding&nbsp;box.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numpy.ndarray:&nbsp;The&nbsp;frame&nbsp;with&nbsp;the&nbsp;boss&nbsp;mode&nbsp;filter&nbsp;overlay&nbsp;applied.</span></dd></dl>
+ <dl><dt><a name="-cowboy_filter"><strong>cowboy_filter</strong></a>(frame, overlay, face_landmarks, frame_shape, coordinates)</dt><dd><span class="code">Applies&nbsp;the&nbsp;cowboy&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;images&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame&nbsp;(numpy.ndarray):&nbsp;The&nbsp;input&nbsp;video&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;overlay&nbsp;(tuple):&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;overlay&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;face_landmarks&nbsp;(numpy.ndarray):&nbsp;The&nbsp;facial&nbsp;landmarks&nbsp;detected&nbsp;in&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame_shape&nbsp;(tuple):&nbsp;The&nbsp;shape&nbsp;of&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;coordinates&nbsp;(tuple):&nbsp;The&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;face&nbsp;bounding&nbsp;box.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numpy.ndarray:&nbsp;The&nbsp;frame&nbsp;with&nbsp;the&nbsp;cowboy&nbsp;filter&nbsp;overlay&nbsp;applied.</span></dd></dl>
+ <dl><dt><a name="-load_overlay_images"><strong>load_overlay_images</strong></a>(filter)</dt><dd><span class="code">Loads&nbsp;the&nbsp;overlay&nbsp;images&nbsp;based&nbsp;on&nbsp;the&nbsp;specified&nbsp;filter.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filter&nbsp;(str):&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;filter&nbsp;to&nbsp;be&nbsp;applied.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;overlay&nbsp;images.</span></dd></dl>
+ <dl><dt><a name="-pirate_filter"><strong>pirate_filter</strong></a>(frame, overlay, face_landmarks, frame_shape, coordinates)</dt><dd><span class="code">Applies&nbsp;the&nbsp;pirate&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;image&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame&nbsp;(numpy.ndarray):&nbsp;The&nbsp;input&nbsp;video&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;overlay&nbsp;(tuple):&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;overlay&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;face_landmarks&nbsp;(numpy.ndarray):&nbsp;The&nbsp;facial&nbsp;landmarks&nbsp;detected&nbsp;in&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame_shape&nbsp;(tuple):&nbsp;The&nbsp;shape&nbsp;of&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;coordinates&nbsp;(tuple):&nbsp;The&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;face&nbsp;bounding&nbsp;box.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numpy.ndarray:&nbsp;The&nbsp;frame&nbsp;with&nbsp;the&nbsp;pirate&nbsp;filter&nbsp;overlay&nbsp;applied.</span></dd></dl>
+ <dl><dt><a name="-police_filter"><strong>police_filter</strong></a>(frame, overlay, face_landmarks, frame_shape, coordinates)</dt><dd><span class="code">Applies&nbsp;the&nbsp;police&nbsp;filter&nbsp;overlay&nbsp;on&nbsp;the&nbsp;frame&nbsp;using&nbsp;the&nbsp;provided&nbsp;overlay&nbsp;image&nbsp;and&nbsp;facial&nbsp;feature&nbsp;coordinates.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame&nbsp;(numpy.ndarray):&nbsp;The&nbsp;input&nbsp;video&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;overlay&nbsp;(tuple):&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;the&nbsp;overlay&nbsp;images.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;face_landmarks&nbsp;(numpy.ndarray):&nbsp;The&nbsp;facial&nbsp;landmarks&nbsp;detected&nbsp;in&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;frame_shape&nbsp;(tuple):&nbsp;The&nbsp;shape&nbsp;of&nbsp;the&nbsp;frame.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;coordinates&nbsp;(tuple):&nbsp;The&nbsp;coordinates&nbsp;of&nbsp;the&nbsp;face&nbsp;bounding&nbsp;box.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;numpy.ndarray:&nbsp;The&nbsp;frame&nbsp;with&nbsp;the&nbsp;police&nbsp;filter&nbsp;overlay&nbsp;applied.</span></dd></dl>
+</td></tr></table>
+</body></html>
